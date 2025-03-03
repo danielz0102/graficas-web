@@ -11,10 +11,31 @@
       href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles/game.css" />
-    <script src="/scripts/game.js" defer></script>
+    <link rel="stylesheet" href="../styles/game.css" />
+    <script src="../scripts/game.js" defer></script>
   </head>
   <body>
+    <div id="pauseScreen" class="pause-screen">
+      <div class="pause-box">
+        <h2>Pausa</h2>
+        <button id="resumeBtn" class="pause-btn" onclick="resumeGame()">Reanudar</button>
+        <a href="../index.html" class="pause-btn">Salir al menú</a>
+      </div>
+    </div>
+    <div id="settingsScreen" class="settings-screen">
+      <div class="settings-box">
+        <h2>Ajustes</h2>
+        <label>
+          <input type="checkbox" id="soundToggle" />
+          Activar sonido
+        </label>
+        <label>
+          <input type="checkbox" id="musicToggle" />
+          Activar música
+        </label>
+        <button id="closeSettings" class="settings-btn">Cerrar</button>
+      </div>
+    </div>    
     <nav class="navbar">
       <a href="../index.html" class="link"
         ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -34,7 +55,7 @@
             />
           </svg>
         </btn>
-        <btn href="#" class="link" id="pauseBtn">
+        <btn href="#" class="link" id="pauseBtn" onclick="pauseGame()">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="#fff" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
           </svg>
@@ -42,7 +63,7 @@
       </div>
     </nav>
     <main id="game">
-      <video id="preview" src="/assets/preview.mp4" autoplay muted loop></video>
+      <video id="preview" src="../assets/preview.mp4" autoplay muted loop></video>
     </main>
   </body>
 </html>

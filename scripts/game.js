@@ -11,9 +11,39 @@ const pauseIcon = `
 `;
 const preview = document.querySelector("#preview");
 let gamePaused = false;
+const pauseScreen = document.getElementById("pauseScreen");
+const settingsBtn = document.querySelector(".link--settings"); 
+const settingsScreen = document.getElementById("settingsScreen");
+const closeSettings = document.getElementById("closeSettings");
 
-pauseBtn.addEventListener("click", () => {
+/* pauseBtn.addEventListener("click", () => {
   gamePaused = !gamePaused;
   pauseBtn.innerHTML = gamePaused ? playIcon : pauseIcon;
+  preview[gamePaused ? "pause" : "play"]();
+}); */
+
+function pauseGame(){
+  gamePaused = !gamePaused;
+  pauseBtn.innerHTML = gamePaused ? playIcon : pauseIcon;
+  preview[gamePaused ? "pause" : "play"]();
+  pauseScreen.style.display = "flex"; 
+};
+
+function resumeGame(){
+  gamePaused = !gamePaused;
+  pauseBtn.innerHTML = gamePaused ? playIcon : pauseIcon;
+  preview[gamePaused ? "pause" : "play"]();
+  pauseScreen.style.display = "none"; 
+};
+
+settingsBtn.addEventListener("click", () => {
+  settingsScreen.style.display = "flex";
+  gamePaused = !gamePaused;
+  preview[gamePaused ? "pause" : "play"]();
+});
+
+closeSettings.addEventListener("click", () => {
+  settingsScreen.style.display = "none";
+  gamePaused = !gamePaused;
   preview[gamePaused ? "pause" : "play"]();
 });

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TURBO RUSH - Foro de Feedback</title>
+    <!-- SHARE TECH MONO FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <script src="../scripts/posts.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="../index.html" class="back-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path fill="#fff" d="M19,7V11H5.83L9.41,7.41L8,6L2,12L8,18L9.41,16.58L5.83,13H21V7H19Z" />
+        </svg>
+        Regresar
+      </a>
+    </nav>
+
+    <main>
+      <div class="logo">
+        <h1 class="title">Turbo Rush</h1>
+        <p class="subtitle">Foro de Feedback</p>
+      </div>
+
+      <button class="menu-btn" id="open-modal">Crear Publicación</button>
+      
+      <div class="posts-container">
+        <h2 class="subtitle">Publicaciones Recientes</h2>
+        <div class="post">
+          <h3>¿Cómo mejorar el rendimiento en Turbo Rush?</h3>
+          <p>Usuario123: He notado que mi FPS baja en ciertos mapas, ¿hay ajustes recomendados?</p>
+          <div class="reply">
+            <p>Dev_Turbo: ¡Sí! Intenta reducir los efectos de partículas en la configuración.</p>
+          </div>
+        </div>
+        <div class="post">
+          <h3>¿Planes para nuevas pistas?</h3>
+          <p>RacerX: Me encanta el juego, pero sería genial tener más mapas. ¿Hay planes para eso?</p>
+          <div class="reply">
+            <p>Admin_Turbo: Estamos trabajando en una nueva expansión, ¡pronto daremos más detalles!</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal" id="post-modal">
+      <div class="modal-content">
+        <button class="close-btn" id="close-modal">&times;</button>
+        <h2 class="subtitle">Nueva Publicación</h2>
+        <form id="post-form">
+          <div class="input-group">
+            <label for="post-title">Título</label>
+            <input type="text" id="post-title" name="post-title" required />
+          </div>
+          <div class="input-group">
+            <label for="post-content">Contenido</label>
+            <textarea id="post-content" name="post-content" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="menu-btn">Publicar</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <button class="sound-btn">
+        <img src="../assets/volume-off.svg" alt="Ícono de sonido" />
+      </button>
+    </footer>
+
+    <audio src="../assets/main-theme.mp3" loop muted></audio>
+
+
+    <script src="../scripts/publi.js"></script>
+    
+  </body>
+</html>
